@@ -1,0 +1,195 @@
+﻿<Window x:Class="Pack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pack" xmlns:Element="clr-namespace:Pack.Element" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+                 mc:Ignorable="d"
+                 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                 TextElement.FontWeight="Regular"
+                 TextElement.FontSize="13"
+                 TextOptions.TextFormattingMode="Ideal"
+                 TextOptions.TextRenderingMode="Auto"
+                 AllowsTransparency="True"
+        Title="MainWindow" Height="725" Width="1850" Left="0" Top="0" Foreground="{x:Null}" WindowStyle="None" Background="{x:Null}" OpacityMask="#FFF52525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <!-- Material Design -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentBaseColorBrush" Color="{DynamicResource Primary600}" />
+            <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}"/>
+            <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}"/>
+            <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}"/>
+            <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <LinearGradientBrush x:Key="ProgressBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
+                <GradientStop Color="{DynamicResource Primary700}" Offset="0"/>
+                <GradientStop Color="{DynamicResource Primary300}" Offset="1"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="CheckmarkFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="RightArrowFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="IdealForegroundDisabledBrush" Color="{DynamicResource Primary500}" Opacity="0.4"/>
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10" Color="{DynamicResource Primary500}" />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10" Color="{DynamicResource Primary400}" />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10" Color="{DynamicResource Primary500Foreground}" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Disabled" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="Main_TabControl" Margin="0,-25,0,0" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" SelectedIndex="0"  Padding="0">
+            <TabItem x:Name="Menu_Person_Informations" Header="个人信息">
+                <Grid DataContext="{Binding Path=Author, UpdateSourceTrigger=PropertyChanged}">
+                    <Border BorderThickness="0.1" Margin="10" Background="White" CornerRadius="30" >
+                        <Border.Effect>
+                            <DropShadowEffect Color="Blue" BlurRadius="10" ShadowDepth="0" Opacity="1" />
+                        </Border.Effect>
+                    </Border>
+                    <TextBox Style="{StaticResource  MaterialDesignDataGridComboBoxEditableTextBox}" Height="114" Margin="300,42,285,569"  Text="{Binding Path=Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="735" FontFamily="楷体" FontSize="100" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" RenderTransformOrigin="0.497,0.474"/>
+                    <TextBox Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Height="216" Margin="24,471,25,39" Text="{Binding Path=Informations}"  VerticalAlignment="Center" FontFamily="楷体" FontSize="50" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"/>
+                    <Label Content="已创作的卡牌数量:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Margin="65,297,1040,364"/>
+                    <Label Content="{Binding Path=Create_num}"  VerticalContentAlignment="Center" FontSize="30" Margin="290,297,950,364" RenderTransformOrigin="0.512,0.462" Foreground="Crimson"/>
+                    <Label Content="张" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Margin="375,297,895,364"/>
+                    <Label Content="已更新的卡牌数量:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Margin="65,382,1040,279"/>
+                    <Label Content="{Binding Path=Upgrade_num}"  VerticalContentAlignment="Center" FontSize="30" Margin="290,382,950,279" RenderTransformOrigin="0.512,0.462" Foreground="Crimson"/>
+                    <Label Content="张" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Margin="375,382,895,279"/>
+                    <Label Content="QQ号:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="65,202,1155,454"/>
+                    <TextBox Text="{Binding Path=QQ}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Margin="175,202,895,454"/>
+                    <Button Content="刷" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Background="LightSeaGreen" HorizontalAlignment="Left" Height="75" Margin="1075,26,0,0" VerticalAlignment="Top" Width="75" FontSize="36" Click="Button_Click_1"/>
+                    <Button Content="存" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Background="LightSeaGreen" HorizontalAlignment="Left" Height="75" Margin="1185,26,0,0" VerticalAlignment="Top" Width="75" FontSize="36" Click="Button_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Menu_Skill_Cards" Header="技能设置">
+                <Grid>
+                    <Element:CardPanle x:Name="CardPanle"  Margin="0"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Menu_Adventure_Cards" Header="奇遇设置" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57">
+                <Grid>
+                    <Element:AdventurePanle x:Name="AdventurePanle" Margin="0"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Menu_Lience" Header="充值激活" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="57">
+                <Grid>
+                    <Border BorderThickness="0.1" Margin="10" Background="White" CornerRadius="30" >
+                        <Border.Effect>
+                            <DropShadowEffect Color="Blue" BlurRadius="10" ShadowDepth="0" Opacity="1" />
+                        </Border.Effect>
+                    </Border>
+                    <TextBlock Foreground="HotPink" Margin="262,80,262,0" TextWrapping="Wrap" Text="充值激活" Height="80" Width="530" VerticalAlignment="Top" FontFamily="{StaticResource MaterialDesignFont}" TextAlignment="Center" FontSize="72" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                    <PasswordBox Margin="134,214,134,333" Width="785" Height="85"/>
+                    <Button Content="激活" Margin="0,150,0,0" Width="500" Height="75" FontSize="50" FontFamily="Microsoft JhengHei UI" FontWeight="Bold"/>
+                    <Button Content="充值" Margin="277,450,277,107" Width="500" Height="75" FontSize="50" FontFamily="Microsoft JhengHei UI" FontWeight="Bold"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Menu_Version_Informations" Header="版本说明" HorizontalAlignment="Left" Height="20" VerticalAlignment="Bottom" Width="57" Margin="-2,-2,0,2">
+                <Grid>
+                    <Border BorderThickness="0.1" Margin="10" Background="White" CornerRadius="30" >
+                        <Border.Effect>
+                            <DropShadowEffect Color="Blue" BlurRadius="10" ShadowDepth="0" Opacity="1" />
+                        </Border.Effect>
+                    </Border>
+                    <Image HorizontalAlignment="Left" Height="65" Margin="558,60,0,0" VerticalAlignment="Top" Width="475" Source="/Resources/Version_1.png" />
+                    <Image Margin="0" Source="/Resources/Version_2.png" />
+                    <Image HorizontalAlignment="Left" Height="80" Margin="318,245,0,0" VerticalAlignment="Top" Width="485" Source="Resources/Version_3.png" />
+                    <Image HorizontalAlignment="Left" Height="55" Margin="593,360,0,0" VerticalAlignment="Top" Width="270" Source="Resources/Version_4.png" />
+                    <Image HorizontalAlignment="Left" Height="60" Margin="628,500,0,0" VerticalAlignment="Top" Width="320" Source="Resources/Version_5.png" />
+                    <TextBlock Height="54" Margin="24,568,25,10" Text="{Binding Expiration_Date}" VerticalAlignment="Center" FontFamily="楷体" FontSize="50" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,146,0,0" Width="220" Height="384" RenderTransformOrigin="0.6,0.6" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="10.305"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="41.818"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Button  x:Name="Menu_Button_1" Margin="0,15,0,0"  Height="70" Padding="0"  Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="个人信息"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button  x:Name="Menu_Button_1_Copy4" Margin="0,15,0,0"  Height="70" Padding="0" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Copy4_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush  Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Fill="#FF5078B4" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Visibility="Hidden" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="充值激活"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button  x:Name="Menu_Button_1_Copy" Margin="0,15,0,0"  Height="70" Padding="0" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Copy5_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Fill="#FF5078B4" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Visibility="Hidden" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="版本说明"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel  Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,140,-39,0" Width="220" Height="460" Grid.Column="2" RenderTransformOrigin="0.3,0.3" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-10.305"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-41.818"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Button  x:Name="Menu_Button_1_Copy6" Margin="0,15,0,0"  Height="70" Padding="0" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Copy_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Fill="#FF5078B4" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Visibility="Hidden" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="技能设置"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button  x:Name="Menu_Button_1_Copy7" Margin="0,15,0,0"  Height="70" Padding="0"  Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Copy1_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Fill="#FF5078B4" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Visibility="Hidden" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="奇遇设置"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button  x:Name="Menu_Button_1_Copy5" Margin="0,15,0,0"  Height="70" Padding="0" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Menu_Button_1_Copy5_Click" BorderBrush="{x:Null}" >
+                <Button.Background>
+                    <SolidColorBrush Color="CornflowerBlue" Opacity="0.5"/>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal" Height="80" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Rectangle Fill="#FF5078B4" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="10" Visibility="Hidden" Margin="0,0,30,0"/>
+                    <materialDesign:PackIcon Kind="Account"  Margin="0,12,15,18" Height="20" HorizontalAlignment="Right" Width="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="数据监控"  FontFamily="楷体" FontWeight="Bold" Margin="20,12,0,16" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
