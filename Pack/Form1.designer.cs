@@ -117,11 +117,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -137,6 +132,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button18 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -177,8 +180,8 @@
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1311,6 +1314,155 @@
             this.radioButton2.Text = "真实转发\r\n将对方Q、昵称、群号、群名称、消息转发至指定群。";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Controls.Add(this.textBox8);
+            this.groupBox7.Controls.Add(this.checkBox4);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.textBox7);
+            this.groupBox7.Controls.Add(this.textBox6);
+            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Controls.Add(this.textBox4);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.checkBox3);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Controls.Add(this.checkBox2);
+            this.groupBox7.Controls.Add(this.button18);
+            this.groupBox7.Location = new System.Drawing.Point(3, 123);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(297, 436);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(0, 374);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 20);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "服务器地址";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(96, 366);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(176, 26);
+            this.textBox7.TabIndex = 40;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(96, 321);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(176, 26);
+            this.textBox6.TabIndex = 36;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(96, 275);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(176, 26);
+            this.textBox5.TabIndex = 35;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(96, 231);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(176, 26);
+            this.textBox4.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 329);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 20);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "接收邮箱";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 283);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "发送密码";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 235);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "发送账户";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(96, 200);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(84, 24);
+            this.checkBox3.TabIndex = 33;
+            this.checkBox3.Text = "是否启动";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(112, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 28);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "SMTP服务";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(131, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(159, 28);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "关键字CSV导出";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(68, 53);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 24);
+            this.checkBox2.TabIndex = 23;
+            this.checkBox2.Text = "是否启动";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged_1);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(100, 113);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(143, 50);
+            this.button18.TabIndex = 22;
+            this.button18.Text = "选择路径";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click_1);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1359,151 +1511,31 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(1370, 749);
             this.tableLayoutPanel12.TabIndex = 5;
             // 
-            // groupBox7
+            // checkBox4
             // 
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Controls.Add(this.textBox7);
-            this.groupBox7.Controls.Add(this.textBox6);
-            this.groupBox7.Controls.Add(this.textBox5);
-            this.groupBox7.Controls.Add(this.textBox4);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.checkBox3);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Controls.Add(this.checkBox2);
-            this.groupBox7.Controls.Add(this.button18);
-            this.groupBox7.Location = new System.Drawing.Point(3, 123);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(409, 492);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(186, 200);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(78, 24);
+            this.checkBox4.TabIndex = 45;
+            this.checkBox4.Text = "SLL加密";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // label11
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 449);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 20);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "服务器地址";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 413);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 20);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "端口";
             // 
-            // textBox7
+            // textBox8
             // 
-            this.textBox7.Location = new System.Drawing.Point(138, 441);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(176, 26);
-            this.textBox7.TabIndex = 40;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(138, 396);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(176, 26);
-            this.textBox6.TabIndex = 36;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(138, 350);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(176, 26);
-            this.textBox5.TabIndex = 35;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 306);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 26);
-            this.textBox4.TabIndex = 34;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 404);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 20);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "接收邮箱";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 358);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "发送密码";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 310);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "发送账户";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(138, 275);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(84, 24);
-            this.checkBox3.TabIndex = 33;
-            this.checkBox3.Text = "是否启动";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(154, 232);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 28);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "SMTP服务";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
-            this.label4.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(131, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 28);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "关键字CSV导出";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(68, 65);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 24);
-            this.checkBox2.TabIndex = 23;
-            this.checkBox2.Text = "是否启动";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged_1);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(136, 155);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(143, 50);
-            this.button18.TabIndex = 22;
-            this.button18.Text = "选择路径";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click_1);
+            this.textBox8.Location = new System.Drawing.Point(96, 407);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(176, 26);
+            this.textBox8.TabIndex = 46;
             // 
             // Form1
             // 
@@ -1564,9 +1596,9 @@
             this.tableLayoutPanel18.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1677,5 +1709,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }

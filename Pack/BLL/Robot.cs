@@ -90,10 +90,8 @@ namespace Pack.BLL
         string mailBody,   //邮件内容
         string[] attachFiles //邮件附件
         */
-        public static void SendEmail(string userEmail,  string userPswd,   string toEmail,   string mailServer,string subject, string mailBody)
+        public static void SendEmail(string userEmail, string userPswd, string toEmail, string mailServer, string subject, string mailBody, string port, bool sll)
         {
-            //邮箱帐号的登录名
-            string username = userEmail.Substring(0, userEmail.IndexOf('@'));
             //邮件发送者
             MailAddress from = new MailAddress(userEmail);
             //邮件接收者
@@ -120,10 +118,11 @@ namespace Pack.BLL
             //或者用：
             //SmtpClient smtp = new SmtpClient();
             //smtp.Host = mailServer;
-
+            smtp.EnableSsl = sll;
+            smtp.Port = int.Parse(port);
             //不使用默认凭据访问服务器
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(username, userPswd);
+            smtp.Credentials = new NetworkCredential(userEmail, userPswd);
             //使用network发送到smtp服务器
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
             try
@@ -133,8 +132,8 @@ namespace Pack.BLL
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
+                WS.Log(e.Message);
+                WS.Log(e.StackTrace);
             }
         }
     }
