@@ -43,6 +43,9 @@ namespace Native.Core
             textBox8.Text = Customize.config.SMTP_Port;
             checkBox3.Checked = Customize.config.SMTP;
             checkBox4.Checked = Customize.config.SMTP_SSL;
+            textBox9.Text = Customize.config.Manager_Group_Invite_QQ;
+            comboBox2.SelectedIndex = Customize.config.Manager_Group_Invite_Request;
+            comboBox3.SelectedIndex = Customize.config.Manager_QQ_Request;
             var groupList = Genecontrol.CQApi.GetGroupList();
             foreach (var g in groupList)
             {
@@ -273,6 +276,9 @@ namespace Native.Core
             Customize.config.SMTP_Server = textBox7.Text;
             Customize.config.SMTP_Port = textBox8.Text;
             Customize.config.SMTP_SSL = checkBox4.Checked;
+            Customize.config.Manager_Group_Invite_QQ = textBox9.Text;
+            Customize.config.Manager_Group_Invite_Request = comboBox2.SelectedIndex;
+            Customize.config.Manager_QQ_Request = comboBox3.SelectedIndex;
             var d = new Dictionary<long, bool>();
             for (var i = 0; i < dataGridView2.Rows.Count; i++)
             {

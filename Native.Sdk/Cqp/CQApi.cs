@@ -718,12 +718,7 @@ namespace Native.Sdk.Cqp
 			string data = CQP.CQ_getStrangerInfo (this.AppInfo.AuthCode, qqId, notCache).ToString (CQApi.DefaultEncoding);
 			if (string.IsNullOrEmpty (data))
 			{
-#if DEBUG
-				if (Debugger.Launch()) { Debugger.Break(); }
-				throw new InvalidDataException("获取的数据流格式无效");
-#else
 				return null;
-#endif
 			}
 
 			try
@@ -877,12 +872,7 @@ namespace Native.Sdk.Cqp
 			string data = CQP.CQ_getGroupInfo (this.AppInfo.AuthCode, groupId, notCache).ToString (CQApi.DefaultEncoding);
 			if (string.IsNullOrEmpty (data))
 			{
-#if DEBUG
-				if (Debugger.Launch()) { Debugger.Break(); }
-				throw new InvalidDataException("获取的数据流格式无效");
-#else
 				return null;
-#endif
 			}
 
 			try

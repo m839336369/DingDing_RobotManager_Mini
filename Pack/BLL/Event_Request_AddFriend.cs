@@ -1,4 +1,5 @@
-﻿using Native.Csharp.App;
+﻿using Native.Core;
+using Native.Csharp.App;
 using Native.Sdk.Cqp.EventArgs;
 using Native.Sdk.Cqp.Interface;
 using Newtonsoft.Json;
@@ -46,6 +47,10 @@ namespace Pack.BLL
                     friendInfo.infos.Add(info);
                     string message = JsonConvert.SerializeObject(friendInfo);
                     WS.sendMessage(message);
+                    if(Customize.config.Manager_QQ_Request == 0)
+                    {
+                        e.CQApi.SetFriendAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
+                    } 
                     //推送好友添加通知
                     Task.Run(() => {
                         Thread.Sleep(2000);

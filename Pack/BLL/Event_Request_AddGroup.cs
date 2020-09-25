@@ -1,4 +1,5 @@
-﻿using Native.Csharp.App;
+﻿using Native.Core;
+using Native.Csharp.App;
 using Native.Sdk.Cqp.EventArgs;
 using Native.Sdk.Cqp.Interface;
 using System;
@@ -78,15 +79,17 @@ namespace Pack.BLL
                 //收到邀请入群事件
                 if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup)
                 {
-
-                    if (WS.webSocketRunStatus)
+                    if(Customize.config.Manager_Group_Invite_Request == 0)
                     {
-                        var res = Genecontrol.CQApi.SetGroupAddRequest(e.Request, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
-                        WS.Log("接受群邀请, 返回操作标记:" + res.ToString());
+                        e.CQApi.SetGroupAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
                     }
-                    else
+                    else if (Customize.config.Manager_Group_Invite_Request == 1 && Customize.config.Manager_Group_Invite_QQ.Split('&').Contains(e.FromQQ.Id.ToString()))
                     {
-                        WS.Log("WebSocket状态异常");
+                        e.CQApi.SetGroupAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
+                    }
+                    else if(Customize.config.Manager_Group_Invite_Request == 2)
+                    {
+                        e.CQApi.SetGroupAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.FAIL);
                     }
                 }
             }
