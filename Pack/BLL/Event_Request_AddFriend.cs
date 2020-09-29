@@ -51,6 +51,10 @@ namespace Pack.BLL
                     {
                         e.CQApi.SetFriendAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
                     } 
+                    else if(Customize.config.Manager_QQ_Request == 1)
+                    {
+                        e.CQApi.SetFriendAddRequest(e.Request.ResponseFlag, Native.Sdk.Cqp.Enum.CQResponseType.FAIL);
+                    }
                     //推送好友添加通知
                     Task.Run(() => {
                         Thread.Sleep(2000);

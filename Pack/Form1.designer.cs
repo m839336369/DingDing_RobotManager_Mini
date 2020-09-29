@@ -729,7 +729,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage6.Size = new System.Drawing.Size(865, 608);
+            this.tabPage6.Size = new System.Drawing.Size(865, 605);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "关键词回复";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -748,8 +748,8 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 604F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(861, 604);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 601F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(861, 601);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // dataGridView5
@@ -769,7 +769,7 @@
             this.dataGridView5.RowHeadersVisible = false;
             this.dataGridView5.RowHeadersWidth = 30;
             this.dataGridView5.RowTemplate.Height = 33;
-            this.dataGridView5.Size = new System.Drawing.Size(340, 600);
+            this.dataGridView5.Size = new System.Drawing.Size(340, 597);
             this.dataGridView5.TabIndex = 1;
             this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
@@ -805,7 +805,7 @@
             this.dataGridView6.RowHeadersVisible = false;
             this.dataGridView6.RowHeadersWidth = 30;
             this.dataGridView6.RowTemplate.Height = 66;
-            this.dataGridView6.Size = new System.Drawing.Size(513, 600);
+            this.dataGridView6.Size = new System.Drawing.Size(513, 597);
             this.dataGridView6.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn7
@@ -1559,7 +1559,8 @@
             this.comboBox2.Items.AddRange(new object[] {
             "同意所有拉群申请",
             "同意特定号码",
-            "拒绝所有拉群申请"});
+            "拒绝所有拉群申请",
+            "默认不处理"});
             this.comboBox2.Location = new System.Drawing.Point(177, 3);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
@@ -1578,7 +1579,8 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "同意所有好友申请",
-            "拒绝所有好友申请"});
+            "拒绝所有好友申请",
+            "默认不处理"});
             this.comboBox3.Location = new System.Drawing.Point(452, 3);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 20);
