@@ -163,7 +163,7 @@ namespace Native.Core
                                         if (e.Message.Text.Length > 20) title = e.Message.Text.Substring(0, 20);
                                         else title = e.Message.Text;
                                         string msg = $"关键字:{config.f[i] }\n方式:群聊\n日期:{DateTime.Now.ToString()}\nQQ号:{e.FromQQ}\nQQ昵称:{e.CQApi.GetStrangerInfo(e.FromQQ.Id).Nick}\n群号码:{e.FromGroup}\n群名称:{e.FromGroup.GetGroupInfo().Name}\n消息内容:{e.Message.Text}";
-                                        Robot.SendEmail(config.SMTP_User, config.SMTP_Pass, config.SMTP_Acieve, config.SMTP_Server, title, msg,config.SMTP_Port,config.SMTP_SSL);
+                                        Robot.SendEmail(config.SMTP_User, config.SMTP_Pass, config.SMTP_Acieve, config.SMTP_Server, title, msg, config.SMTP_Port, config.SMTP_SSL);
                                     }
                                 }
                             }
