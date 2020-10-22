@@ -38,6 +38,8 @@ namespace Native.Core
             public string SMTP_Server;
             public string SMTP_Port;
             public bool SMTP_SSL;
+            public int member_enter_send;
+            public int member_leave_send;
             public long fg = 0;
             public int gdb = 0;
             public int gdt = 20;
@@ -155,7 +157,6 @@ namespace Native.Core
                                         if (e.Message.Text.Length > 20) title = e.Message.Text.Substring(0, 20);
                                         else title = e.Message.Text;
                                         Robot.Write_Key_Log(config.f[i], DateTime.Now, e.FromQQ, e.CQApi.GetStrangerInfo(e.FromQQ.Id).Nick, e.FromGroup.Id, e.FromGroup.GetGroupInfo().Name, e.Message.Text, "群聊");
-
                                     }
                                     if (Customize.config.SMTP)
                                     {

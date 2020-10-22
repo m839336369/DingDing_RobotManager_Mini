@@ -33,7 +33,7 @@ namespace Pack.BLL
                         WS.MessageForSend data = new WS.MessageForSend();
                         data.rid = WS.Rid();
                         data.from = e.BeingOperateQQ;
-                        data.content = "[入群通知]";
+                        data.content = $"[入群通知]:\n入群用户:{data.from}\n入群时间:{DateTime.Now}";
                         data.qun = e.FromGroup;
                         var qqInfo = Genecontrol.CQApi.GetStrangerInfo(e.BeingOperateQQ).Nick;
                         if (!WS.cacheQQ.TryGetValue(e.BeingOperateQQ, out data.fromname))
@@ -63,7 +63,29 @@ namespace Pack.BLL
                                 return;
                             }
                         }
-                        WS.postMessage(data);
+                        if (Customize.config.member_enter_send == 1)
+                        {
+                            if (!WS.cacheQQ.TryGetValue(e.BeingOperateQQ, out var nick))
+                            {
+                                nick = Genecontrol.CQApi.GetStrangerInfo(e.BeingOperateQQ).Nick;
+                                WS.cacheQQ.TryAdd(e.FromQQ, nick);
+                            }
+                            if (!WS.cacheGroup.TryGetValue(e.BeingOperateQQ, out var gn))
+                            {
+                                gn = Robot.GetGroupName(e.FromGroup);
+                                WS.cacheGroup.TryAdd(e.FromGroup, gn);
+                            }
+                            Genecontrol.CQApi.SendGroupMessage(Customize.config.fg, $"QQ: {e.BeingOperateQQ}\n" +
+                                $"昵称: {nick}\n" +
+                                $"群号: {e.FromGroup}\n" +
+                                $"群名: {gn}\n" +
+                                $"消息内容: \n" +
+                                $"{data}");
+                        }
+                        else if(Customize.config.member_enter_send == 2)
+                        {
+                            WS.postMessage(data);
+                        }
                     }
 
                 }

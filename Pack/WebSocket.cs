@@ -55,7 +55,7 @@ namespace Native.Csharp.App
         public static void Init()
         {
             string uri =
-                $"ws://data.ronsir.cn:8778/ws/?username=robot&password={md5(md5(DateTime.Now.ToString("yyyyMMdd")))}&type=pcClient&clientid=2&number={AppInfo.self}";
+                $"ws://api.ronsir.cn/ws/?username=robot&password={md5(md5(DateTime.Now.ToString("yyyyMMdd")))}&type=pcClient&clientid=2&number={AppInfo.self}";
             webSocket = new WebSocket(uri);
             webSocket.OnOpen += WebSocket_OnOpen;
             webSocket.OnMessage += WebSocket_OnMessage;
